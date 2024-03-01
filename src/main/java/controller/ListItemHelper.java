@@ -51,11 +51,11 @@ public class ListItemHelper {
 	}
 
 	public ListItem searchForItemById(int idToEdit) {
-	EntityManager em = emfactory.createEntityManager();
-	em.getTransaction().begin();
-	ListItem found = em.find(ListItem.class, idToEdit);
-	em.close();
-	return found;
+		EntityManager em = emfactory.createEntityManager();
+		em.getTransaction().begin();
+		ListItem found = em.find(ListItem.class, idToEdit);
+		em.close();
+		return found;
 	}
 
 	public void updateItem(ListItem toEdit) {
@@ -64,7 +64,7 @@ public class ListItemHelper {
 		em.merge(toEdit);
 		em.getTransaction().commit();
 		em.close();
-		}
+	}
 
 	public List<ListItem> searchForItemByStore(String storeName) {
 		EntityManager em = emfactory.createEntityManager();
@@ -84,7 +84,7 @@ public class ListItemHelper {
 		List<ListItem> foundItems = typedQuery.getResultList();
 		em.close();
 		return foundItems;
-		}
+	}
 	
 	public void cleanUp() {
 		emfactory.close();

@@ -32,7 +32,7 @@ public class ShopperHelper {
 		EntityManager em =emfactory.createEntityManager();
 		em.getTransaction().begin();
 		
-		TypedQuery<Shopper> typedQuery = em.createQuery("select shfrom Shopper sh where sh.shopperName = :selectedName", Shopper.class);
+		TypedQuery<Shopper> typedQuery = em.createQuery("select sh from Shopper sh where sh.shopperName = :selectedName", Shopper.class);
 		typedQuery.setParameter("selectedName", nameToLookUp);
 		typedQuery.setMaxResults(1);
 		
