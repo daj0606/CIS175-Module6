@@ -35,10 +35,11 @@ public class ViewAllListsServlet extends HttpServlet {
 		ListDetailsHelper slh = new ListDetailsHelper();
 		List<ListDetails> abc = slh.getLists();
 		request.setAttribute("allLists", abc);
+		String path = "/shopping-list-by-user.jsp";
 		if (abc.isEmpty()) {
-			request.setAttribute("allLists", "empty");
+			path = "/index.html";
 		}
-		getServletContext().getRequestDispatcher("/shopping-list-by-user.jsp").forward(request, response);
+		getServletContext().getRequestDispatcher(path).forward(request, response);
 	}
 	
 

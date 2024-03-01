@@ -30,7 +30,7 @@ public class ListDetailsHelper {
 		// TODO Auto-generated method stub
 		EntityManager em = emfactory.createEntityManager();
 		em.getTransaction().begin();
-		TypedQuery<ListDetails> typedQuery = em.createQuery("select detail from ListDetailsdetail where detail.id = :selectedId", ListDetails.class);
+		TypedQuery<ListDetails> typedQuery = em.createQuery("SELECT detail FROM ListDetails detail where detail.id = :selectedId", ListDetails.class);
 		// Substitute parameter with actual data from the toDelete item
 		typedQuery.setParameter("selectedId", toDelete.getId());
 		// we only want one result
